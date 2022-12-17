@@ -1,8 +1,12 @@
+import { InMemoryNotificationRepository } from '../../../test/repositories/in-memory-notificationsRepository';
 import { SendNotificationUseCase } from './sendNotificationUseCase';
 
 describe('Send notification', () => {
   it('should be able to send a notification', async () => {
-    const sendNotification = new SendNotificationUseCase();
+    const notificationRepository = new InMemoryNotificationRepository();
+    const sendNotification = new SendNotificationUseCase(
+      notificationRepository,
+    );
 
     const { notification } = await sendNotification.execute({
       recipientId: 'example-recipient-id',
@@ -10,6 +14,9 @@ describe('Send notification', () => {
       content: 'This is a notification',
     });
 
-    expect(notification).toBeTruthy();
+    // console.log(notifications);
+
+    expect(notificationRepository.notifications).toHaveLength(1);
+    expect(notificationRepository.notifications[0]).toEqual(notification);
   });
 });
