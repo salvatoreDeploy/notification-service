@@ -1,5 +1,6 @@
 import { Replace } from 'src/helpers/Replace';
 import { NotificationContent } from './notificationContent';
+import { randomUUID } from 'node:crypto';
 
 export interface NotificationData {
   recipientId: string;
@@ -10,10 +11,16 @@ export interface NotificationData {
 }
 
 export class Notification {
+  private _id: string;
   private data: NotificationData;
 
   constructor(data: Replace<NotificationData, { createdAt?: Date }>) {
+    this._id = randomUUID();
     this.data = { ...data, createdAt: data.createdAt ?? new Date() };
+  }
+
+  public get id() {
+    return this._id;
   }
 
   public set recipientId(recipientId: string) {
@@ -22,6 +29,14 @@ export class Notification {
 
   public get recipientId(): string {
     return this.data.recipientId;
+  }
+
+  public set category(category: string) {
+    this.data.category = category;
+  }
+
+  public get category(): string {
+    return this.data.category;
   }
 
   public set content(content: NotificationContent) {
