@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { SendNotificationUseCase } from 'src/app/useCases/sendNotificationUseCase';
-import { NotificationController } from '../controller/notification.controller';
-import { DatabaseModule } from '../database/database.module';
+import { SendNotificationUseCase } from '@app/useCases/sendNotificationUseCase';
+import { NotificationController } from '@infra/controller/notification.controller';
+import { DatabaseModule } from '@infra/database/database.module';
 
 @Module({
   imports: [DatabaseModule],
