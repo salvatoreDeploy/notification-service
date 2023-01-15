@@ -1,8 +1,7 @@
 import { InMemoryNotificationRepository } from '@test/repositories/in-memory-notificationsRepository';
 import { CancelNotificationUseCase } from './cancelNotificationUseCase';
-import { Notification } from '@app/entities/notification/notification';
-import { NotificationContent } from '@app/entities/notification/notificationContent';
 import { NotificationError } from './errors/notificationError';
+import { makeNotification } from '@test/factories/notificationFactory';
 
 describe('Cancel notification', () => {
   it('should be able to cancel a notification', async () => {
@@ -11,11 +10,7 @@ describe('Cancel notification', () => {
       notificationRepository,
     );
 
-    const notification = new Notification({
-      category: 'aplication',
-      content: new NotificationContent('Nova notificação no sistema'),
-      recipientId: 'example-recipient-id',
-    });
+    const notification = makeNotification();
 
     await notificationRepository.create(notification);
 
