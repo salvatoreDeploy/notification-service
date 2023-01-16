@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Replace } from 'src/helpers/Replace';
 import { NotificationContent } from './notificationContent';
 import { randomUUID } from 'node:crypto';
@@ -50,6 +51,14 @@ export class Notification {
 
   public set readAt(readAt: Date | null | undefined) {
     this.data.readAt = readAt;
+  }
+
+  public read() {
+    this.data.readAt = new Date();
+  }
+
+  public unRead() {
+    this.data.readAt = null;
   }
 
   public get readAt(): Date | null | undefined {
