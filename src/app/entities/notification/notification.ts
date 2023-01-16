@@ -56,16 +56,16 @@ export class Notification {
     this.data.readAt = readAt;
   }
 
+  public get readAt(): Date | null | undefined {
+    return this.data.readAt;
+  }
+
   public read() {
     this.data.readAt = new Date();
   }
 
   public unRead() {
     this.data.readAt = null;
-  }
-
-  public get readAt(): Date | null | undefined {
-    return this.data.readAt;
   }
 
   public get createdAt(): Date {
@@ -78,5 +78,9 @@ export class Notification {
 
   public get canceledAt(): Date {
     return this.data.canceledAt;
+  }
+
+  public set canceledAt(canceledAt: Date | null | undefined) {
+    this.data.canceledAt = canceledAt;
   }
 }
