@@ -1,0 +1,23 @@
+_id: req_2497afe6eda84c5e8a76abc188babb95
+type: Request
+parentId: wrk_8b668547598f4783b3c3d78eb75eac2b
+modified: 1673843736178
+created: 1673843723840
+url: "{{ _._baseURL }}/notifications/list/from/{% response 'body',
+  'req_75874dbddc754124a3ffc135eaff62d1',
+  'b64::JC5ub3RpZmljYXRpb24ucmVjaXBpZW50SWQ=::46b', 'never', 60 %}"
+name: List From Recipient
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1670576450484.1875
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
