@@ -1,0 +1,23 @@
+_id: req_3a4869519faf49db97c26c5ab9d11902
+type: Request
+parentId: wrk_8b668547598f4783b3c3d78eb75eac2b
+modified: 1673843907938
+created: 1673843366833
+url: "{{ _._baseURL }}/notifications/{% response 'body',
+  'req_75874dbddc754124a3ffc135eaff62d1', 'b64::JC5ub3RpZmljYXRpb24uaWQ=::46b',
+  'no-history', 60 %}/read"
+name: Read Notification
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1670728132288.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

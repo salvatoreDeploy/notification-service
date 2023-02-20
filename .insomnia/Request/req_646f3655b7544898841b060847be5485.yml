@@ -1,0 +1,23 @@
+_id: req_646f3655b7544898841b060847be5485
+type: Request
+parentId: wrk_8b668547598f4783b3c3d78eb75eac2b
+modified: 1673843911233
+created: 1673843380945
+url: "{{ _._baseURL }}/notifications/{% response 'body',
+  'req_75874dbddc754124a3ffc135eaff62d1', 'b64::JC5ub3RpZmljYXRpb24uaWQ=::46b',
+  'no-history', 60 %}/unread"
+name: UnRead Notification
+description: ""
+method: PATCH
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1670641456971.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
